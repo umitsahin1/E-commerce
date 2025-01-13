@@ -1,11 +1,15 @@
 import { Bounce, ToastContainer } from "react-toastify";
 import "./App.css";
+import HomePage from "./pages/HomePage";
+import { Switch } from "react-router-dom";
+import { Route } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
   return (
-    <div>
-      {" "}
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <Switch>
+      <Route exact path="/">
+        <HomePage />
+      </Route>
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -19,7 +23,7 @@ function App() {
         theme="light"
         transition={Bounce}
       />
-    </div>
+    </Switch>
   );
 }
 
