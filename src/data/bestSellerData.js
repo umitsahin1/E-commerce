@@ -4,7 +4,7 @@ const bestSellerData = [
     name: "Graphic Design",
     price: "$16.48",
     newPrice: "$6.48",
-    imageUrl: "public/products1.svg",
+    imageUrl: "/products1.svg",
     description: "English Department",
   },
   {
@@ -12,7 +12,7 @@ const bestSellerData = [
     name: "Graphic Design",
     price: "$16.48",
     newPrice: "$6.48",
-    imageUrl: "public/products2.svg",
+    imageUrl: "/products2.svg",
     description: "English Department",
   },
   {
@@ -20,7 +20,7 @@ const bestSellerData = [
     name: "Graphic Design",
     price: "$16.48",
     newPrice: "$6.48",
-    imageUrl: "public/products3.svg",
+    imageUrl: "/products3.svg",
     description: "English Department",
   },
   {
@@ -28,7 +28,7 @@ const bestSellerData = [
     name: "Graphic Design",
     price: "$16.48",
     newPrice: "$6.48",
-    imageUrl: "public/products4.svg",
+    imageUrl: "/products4.svg",
     description: "English Department",
   },
   {
@@ -36,7 +36,7 @@ const bestSellerData = [
     name: "Graphic Design",
     price: "$16.48",
     newPrice: "$6.48",
-    imageUrl: "public/products5.svg",
+    imageUrl: "/products5.svg",
     description: "English Department",
   },
   {
@@ -44,7 +44,7 @@ const bestSellerData = [
     name: "Graphic Design",
     price: "$16.48",
     newPrice: "$6.48",
-    imageUrl: "public/products6.svg",
+    imageUrl: "/products6.svg",
     description: "English Department",
   },
   {
@@ -52,7 +52,7 @@ const bestSellerData = [
     name: "Graphic Design",
     price: "$16.48",
     newPrice: "$6.48",
-    imageUrl: "public/products7.svg",
+    imageUrl: "/products7.svg",
     description: "English Department",
   },
   {
@@ -60,7 +60,7 @@ const bestSellerData = [
     name: "Graphic Design",
     price: "$16.48",
     newPrice: "$6.48",
-    imageUrl: "public/products8.svg",
+    imageUrl: "/products8.svg",
     description: "English Department",
   },
   {
@@ -68,7 +68,7 @@ const bestSellerData = [
     name: "Graphic Design",
     price: "$16.48",
     newPrice: "$6.48",
-    imageUrl: "public/products9.svg",
+    imageUrl: "/products9.svg",
     description: "English Department",
   },
   {
@@ -76,7 +76,7 @@ const bestSellerData = [
     name: "Graphic Design",
     price: "$16.48",
     newPrice: "$6.48",
-    imageUrl: "public/products10.svg",
+    imageUrl: "/products10.svg",
     description: "English Department",
   },
 ];

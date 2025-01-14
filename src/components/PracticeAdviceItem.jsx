@@ -1,5 +1,5 @@
 const PracticeAdviceItem = () => {
-  const images = ["public/practiceAdvice-1.svg", "public/practiceAdvice-2.svg"];
+  const images = ["/practiceAdvice-1.svg", "/practiceAdvice-2.svg"];
   return (
     <div className="flex md:w-[1050px] md:h-[744px] mx-auto md:justify-between items-center flex-col md:flex-row gap-6">
       {images.map((item, index) => (
@@ -16,16 +16,16 @@ const PracticeAdviceItem = () => {
               <h6>Sale</h6>
             </div>
             <div className="flex gap-2 mb-6">
-              <img src="public/like.svg" />
-              <img src="public/basket.svg" />
-              <img src="public/göz.svg" />
+              <img src="/like.svg" />
+              <img src="/basket.svg" />
+              <img src="/göz.svg" />
             </div>
           </div>
           <div className="flex flex-col m-auto gap-2 items-center ">
-            <div className="flex w-[242px] justify-between">
+            <div className="flex w-[242px] justify-between ">
               <p className="link text-[#23A6F0]">English Department</p>
               <div className="bg-black w-[50px] h-[26px] rounded-3xl flex items-center justify-center gap-1  ">
-                <img src="public/yıldız.svg" />
+                <img src="/yıldız.svg" />
                 <p className=" text-white text-[12px]">4.9</p>
               </div>
             </div>
@@ -35,7 +35,7 @@ const PracticeAdviceItem = () => {
               keystroke away.
             </p>
             <div className="text-[#737373] flex gap-2">
-              <img src="public/inidrme.svg" />
+              <img src="/inidrme.svg" />
               <h6>15 Sales</h6>
             </div>
             <div className="flex gap-2 mb-2">
@@ -44,9 +44,9 @@ const PracticeAdviceItem = () => {
             </div>
             <img
               className="w-[82px] h-[16px]"
-              src="public/product-colors.svg"
+              src="/product-colors.svg"
             />
-            <img src="public/detay görsel.svg" />
+            <img src="/detay görsel.svg" />
             <button className="w-[141px] h-[44px] rounded-3xl border-[1px] border-[#23A6F0]">
               <h6 className="text-[#23A6F0]">Learn More</h6>
             </button>

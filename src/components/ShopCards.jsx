@@ -5,7 +5,7 @@ const ShopCards = () => {
         <div
           className="hidden bg-cover relative w-full h-[572px] md:flex  md:items-end "
           style={{
-            backgroundImage: "url('public/main2 görsel1.svg')",
+            backgroundImage: "url('/main2 görsel1.svg')",
           }}
         >
           <div className="text-white absolute w-[420px] h-[238px] bg-[#2D8BC0BF] opacity-95 ">
@@ -21,7 +21,7 @@ const ShopCards = () => {
         <div
           className=" md:hidden bg-cover relative w-full h-[572px] flex items-end"
           style={{
-            backgroundImage: "url('public/main2-uzungörsel1.svg')",
+            backgroundImage: "url('/main2-uzungörsel1.svg')",
           }}
         >
           <div className="text-white absolute w-[346px] h-[238px] bg-[#2D8BC0BF] opacity-95 ">
@@ -38,7 +38,7 @@ const ShopCards = () => {
           <div
             className="hidden bg-cover relative w-[557px] h-[289px] md:flex  md:items-end"
             style={{
-              backgroundImage: "url('public/main2 görsel 2.svg')",
+              backgroundImage: "url('/main2 görsel 2.svg')",
             }}
           >
             <div className="text-white absolute w-[347px] h-[173px] bg-[#2D8BC0BF] opacity-95">
@@ -54,7 +54,7 @@ const ShopCards = () => {
           <div
             className="flex items-end md:hidden bg-cover relative w-full h-[389px]"
             style={{
-              backgroundImage: "url('public/main2-uzungörsel2.svg')",
+              backgroundImage: "url('/main2-uzungörsel2.svg')",
             }}
           >
             <div className="text-white absolute w-[347px] h-[173px] bg-[#2D8BC0BF] opacity-95">
@@ -70,7 +70,7 @@ const ShopCards = () => {
           <div
             className="hidden  bg-cover relative w-[557px] h-[289px] md:flex  md:items-end"
             style={{
-              backgroundImage: "url('public/main2-görsel3.svg')",
+              backgroundImage: "url('/main2-görsel3.svg')",
             }}
           >
             <div className="text-white absolute w-[347px] h-[173px] bg-[#2D8BC0BF] opacity-95">
@@ -86,7 +86,7 @@ const ShopCards = () => {
           <div
             className="flex items-end md:hidden bg-cover relative w-full h-[389px]"
             style={{
-              backgroundImage: "url('public/main2-uzungörsel3.svg')",
+              backgroundImage: "url('/main2-uzungörsel3.svg')",
             }}
           >
             <div className="text-white absolute w-[347px] h-[173px] bg-[#2D8BC0BF] opacity-95">
