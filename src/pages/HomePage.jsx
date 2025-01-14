@@ -5,7 +5,6 @@ import PageContent from "../layouts/PageContent";
 const HomePage = () => {
   return (
     <div>
-      <Header />
       <PageContent />
       <Footer />
     </div>

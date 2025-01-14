@@ -9,7 +9,7 @@ import {
 
 const HeaderDark = () => {
   return (
-    <div className=" hidden md:flex md:items-center md:justify-between md:bg-[#252B42] md:text-[#FFFFFF] md:px-10 md:w-full h-[46px]">
+    <div className=" hidden 2xl:flex 2xl:items-center 2xl:justify-between 2xl:bg-[#252B42] 2xl:text-[#FFFFFF] 2xl:px-10 2xl:w-full h-[46px]">
       <div className="flex gap-10">
         <div className=" flex gap-2 items-end">
           <Phone className="w-5 h-5" />

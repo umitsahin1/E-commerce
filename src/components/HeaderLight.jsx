@@ -17,8 +17,8 @@ const HeaderLight = () => {
   return (
     <div className="flex justify-between items-center h-[136px] px-10">
       <h3>Bandage</h3>
-      <div className="flex md:justify-between items-center md:w-[1250px] justify-end">
-        <nav className=" gap-3 link text-[#737373 hidden md:flex">
+      <div className="flex xl:justify-between items-center xl:w-[1250px] justify-end">
+        <nav className=" gap-3 link text-[#737373] hidden 2xl:flex">
           <Link className=" hover:text-[#252B42] hover:scale-110" to="/">
             Home
           </Link>
@@ -43,18 +43,18 @@ const HeaderLight = () => {
           </Link>
         </nav>
 
-        <div className="flex sm:gap-6 items-center gap-3">
+        <div className="flex xl:gap-6 items-center gap-3">
           <div className="flex items-center gap-2">
-            <UserRound className="md:text-[#23A6F0] w-6 h-6 text-[#3C403D]" />
-            <p className="link text-[#23A6F0] hidden md:block   ">
+            <UserRound className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D] hidden xl:block" />
+            <p className="link text-[#23A6F0] hidden xl:block   ">
               Login / Register
             </p>
           </div>
-          <Search className="md:text-[#23A6F0] w-6 h-6 text-[#3C403D]" />
-          <ShoppingCart className="md:text-[#23A6F0] w-6 h-6 text-[#3C403D]" />
-          <Heart className="md:text-[#23A6F0] w-6 h-6 text-[#3C403D] hidden md:block" />
+          <Search className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D]" />
+          <ShoppingCart className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D]" />
+          <Heart className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D] hidden xl:block" />
           <Menu
-            className="md:text-[#23A6F0] w-6 h-6 text-[#3C403D] md:hidden"
+            className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D] xl:hidden"
             onClick={toggleMenu}
           />
         </div>
@@ -62,7 +62,7 @@ const HeaderLight = () => {
 
       {/* Mobile Dropdown Menü */}
       {isMenuOpen && (
-        <div className="absolute top-[81px] right-0 w-3/5 bg-white shadow-lg z-10 flex flex-col md:hidden rounded-lg">
+        <div className="absolute top-[81px] right-0 w-3/5 bg-white shadow-lg z-10 flex flex-col xl:hidden rounded-lg ">
           <Link
             className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center"
             to="/"
