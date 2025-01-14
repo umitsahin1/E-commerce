@@ -7,7 +7,7 @@ const Footer = () => {
        items-center justify-center gap-4 md:gap-0"
         >
           <h3>Bandage</h3>
-          <img className="h-[24px] w-[236px]" src="public/social media.svg" />
+          <img className="h-[24px] w-[236px]" src="/social media.svg" />
         </div>
       </div>
 
