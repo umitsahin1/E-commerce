@@ -3,13 +3,11 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import { Switch } from "react-router-dom";
 import { Route } from "react-router-dom/cjs/react-router-dom.min";
-import Header from "./layouts/Header";
 import ShopPage from "./pages/ShopPage";
 
 function App() {
   return (
     <div>
-      <Header />
       <Switch>
         <Route exact path="/">
           <HomePage />
