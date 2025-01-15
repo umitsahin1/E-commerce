@@ -8,12 +8,9 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { BiMenuAltRight } from "react-icons/bi";
 
 const HeaderLight = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
   return (
     <div className="flex justify-between items-center h-[136px] px-10">
       <h3>Bandage</h3>
@@ -53,42 +50,39 @@ const HeaderLight = () => {
           <Search className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D]" />
           <ShoppingCart className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D]" />
           <Heart className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D] hidden xl:block" />
-          <Menu
-            className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D] xl:hidden"
-            onClick={toggleMenu}
-          />
+
+          <BiMenuAltRight className="w-6 h-6 md:hidden" />
         </div>
       </div>
 
       {/* Mobile Dropdown Menü */}
-      {isMenuOpen && (
-        <div className="absolute top-[81px] right-0 w-3/5 bg-white shadow-lg z-10 flex flex-col xl:hidden rounded-lg ">
-          <Link
-            className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center"
-            to="/"
-          >
-            Home
-          </Link>
-          <Link
-            className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center"
-            to="/product"
-          >
-            Product
-          </Link>
-          <Link
-            className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center"
-            to="/pricing"
-          >
-            Pricing
-          </Link>
-          <Link
-            className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center"
-            to="/contact"
-          >
-            Contact
-          </Link>
-        </div>
-      )}
+
+      <div className="absolute top-[81px] right-0 w-full h-[500px] bg-white  z-10 flex flex-col  justify-center gap-6 xl:hidden rounded-lg ">
+        <Link
+          className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center mobile-menu text-[#737373]"
+          to="/"
+        >
+          Home
+        </Link>
+        <Link
+          className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center mobile-menu text-[#737373]"
+          to="/product"
+        >
+          Product
+        </Link>
+        <Link
+          className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center mobile-menu text-[#737373]"
+          to="/pricing"
+        >
+          Pricing
+        </Link>
+        <Link
+          className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center mobile-menu text-[#737373]"
+          to="/contact"
+        >
+          Contact
+        </Link>
+      </div>
     </div>
   );
 };

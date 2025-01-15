@@ -2,8 +2,8 @@ const FeaturedProducts = () => {
   return (
     <div className="flex flex-col-reverse gap-20 md:w-[1050px] mx-auto md:justify-between md:flex-row  items-center">
       <div className=" gap-4 hidden  md:flex">
-        <img src="/homepage-7-görsel-1.svg" />
-        <img src="/homePage-7-görsel-2.svg" />
+        <img src="public/homepage-7-görsel-1.svg" />
+        <img src="public/homePage-7-görsel-2.svg" />
       </div>
       <img className="block md:hidden" src="/hero-cover-212a.svg" />
       <div className="w-[280px] md:w-[447px] flex flex-col gap-5 justify-center">

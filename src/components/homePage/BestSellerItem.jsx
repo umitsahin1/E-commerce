@@ -1,4 +1,4 @@
-import bestSellerData from "../data/bestSellerData.js";
+import bestSellerData from "../../data/bestSellerData.js";
 
 const BestSellerItem = () => {
   console.log(bestSellerData);
