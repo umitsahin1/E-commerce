@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import { Switch } from "react-router-dom";
 import { Route } from "react-router-dom/cjs/react-router-dom.min";
 import ShopPage from "./pages/ShopPage";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         </Route>
         <Route exact path="/shop">
           <ShopPage />
+        </Route>
+        <Route exact path="/product-details">
+          <ProductDetails />
         </Route>
         <ToastContainer
           position="top-right"
