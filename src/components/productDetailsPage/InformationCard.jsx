@@ -21,15 +21,27 @@ const InformationCard = () => {
           consequent sent nostrum met.
         </p>
         <hr />
-        <img src="public/product-colors.svg" className="w-[150px] h-[30px]" />
+        <img
+          src="public/product-colors.svg"
+          className="md:w-[150px] md:h-[30px]"
+        />
         <div className="flex mt-8 gap-4">
           <button className="bg-[#23A6F0] w-[148px] h-[44px] rounded-md">
             <h6 className="text-white">Select Options</h6>
           </button>
-          <div className="flex">
-            <img className="border rounded-full" src="public/like.svg" />
-            <img className="border rounded-full" src="public/basket.svg" />
-            <img className="border rounded-full" src="public/göz.svg" />
+          <div className="flex gap-2">
+            <img
+              className="border rounded-full w-[40px] h-[40px]"
+              src="public/like.svg"
+            />
+            <img
+              className="border rounded-full w-[40px] h-[40px]"
+              src="public/basket.svg"
+            />
+            <img
+              className="border rounded-full w-[40px] h-[40px]"
+              src="public/göz.svg"
+            />
           </div>
         </div>
       </div>
