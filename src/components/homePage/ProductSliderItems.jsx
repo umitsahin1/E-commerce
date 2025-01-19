@@ -28,7 +28,7 @@ const CarouselWithText = () => {
         gap-[30px]  w-[395px]  h-[375px] z-30  translate-y-[-305px] "
         >
           <h5 className="text-[#2A7CC7] text-center">SUMMER 2024</h5>
-          <h1 className="text-[#252B42] text-center">NEW COLLECTION</h1>
+          <h1 className="text-[#252B42]  text-center">NEW COLLECTION</h1>
           <h4 className="text-[#737373] md:w-[350px] md:h-[60px] w-[291px] h-[90px] text-center md:text-start ">
             We know how large objects will act, but things on a small scale.
           </h4>

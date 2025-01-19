@@ -8,7 +8,7 @@ import ShopCards from "../components/homePage/ShopCards";
 
 const HomePageContent = () => {
   return (
-    <div className="flex flex-col lg:gap-20 gap-48 lg:p-0 p-3">
+    <div className="flex flex-col md:gap-20 gap-48 lg:p-0 p-3">
       <ProductSliders />
       <Clients />
       <ShopCards />

@@ -6,7 +6,7 @@ import ShopCards from "../components/shopPage/ShopCards";
 
 const ShopPageContent = () => {
   return (
-    <div className="flex flex-col lg:gap-20 gap-28 lg:p-0 p-3">
+    <div className="flex flex-col md:gap-20 gap-28 md:p-0 p-3">
       <ShopCards />
       <FilterRow />
       <ProductCards />

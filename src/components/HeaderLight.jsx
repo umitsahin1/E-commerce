@@ -20,8 +20,8 @@ const HeaderLight = () => {
       <Link to="/">
         <h3>Bandage</h3>
       </Link>
-      <div className="flex xl:justify-between items-center xl:w-[1250px] justify-end">
-        <nav className=" gap-3 link text-[#737373] hidden 2xl:flex">
+      <div className="flex md:justify-between items-center md:w-[1250px] justify-end">
+        <nav className=" gap-3 link text-[#737373] hidden md:flex">
           <Link className=" hover:text-[#252B42] hover:scale-110" to="/">
             Home
           </Link>
@@ -46,21 +46,21 @@ const HeaderLight = () => {
           </Link>
         </nav>
 
-        <div className="flex xl:gap-6 items-center gap-3">
+        <div className="flex md:gap-6 items-center gap-3">
           <div className="flex items-center gap-2">
-            <UserRound className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D] hidden xl:block" />
-            <p className="link text-[#23A6F0] hidden xl:block   ">
+            <UserRound className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D] hidden md:block" />
+            <p className="link text-[#23A6F0] hidden md:block   ">
               Login / Register
             </p>
           </div>
-          <Search className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D]" />
-          <ShoppingCart className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D]" />
-          <Heart className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D] hidden xl:block" />
+          <Search className="md:text-[#23A6F0] w-6 h-6 text-[#3C403D]" />
+          <ShoppingCart className="md:text-[#23A6F0] w-6 h-6 text-[#3C403D]" />
+          <Heart className="md:text-[#23A6F0] w-6 h-6 text-[#3C403D] hidden md:block" />
           {isMenuOpen ? (
             <BiMenuAltRight className="w-6 h-6" onClick={toggleMenu} />
           ) : (
             <Menu
-              className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D] xl:hidden"
+              className="md:text-[#23A6F0] w-6 h-6 text-[#3C403D] md:hidden"
               onClick={toggleMenu}
             />
           )}
@@ -69,7 +69,7 @@ const HeaderLight = () => {
 
       {/* Mobile Dropdown Menü */}
       {isMenuOpen && (
-        <div className="absolute top-[81px] right-0 w-full h-[500px] bg-white  z-10 flex flex-col  justify-center gap-4 xl:hidden rounded-lg ">
+        <div className="absolute top-[81px] right-0 w-full h-[500px] bg-white  z-10 flex flex-col  justify-center gap-4 md:hidden rounded-lg ">
           <Link
             className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center mobile-menu text-[#737373]"
             to="/"
