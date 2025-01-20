@@ -4,7 +4,7 @@ import HomePageContent from "../layouts/HomePageContent";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="w-fit md:w-full">
       <Header />
       <HomePageContent />
       <Footer />

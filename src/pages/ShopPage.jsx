@@ -5,7 +5,7 @@ import ShopPageContent from "../layouts/ShopPageContent";
 
 const ShopPage = () => {
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col  w-fit md:w-full ">
       <HeaderGreen />
       <HeaderLight />
       <ShopPageContent />

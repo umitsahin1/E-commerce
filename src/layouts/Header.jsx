@@ -1,10 +1,10 @@
-import HeaderDark from "../components/HeaderDark";
+import HeaderGreen from "../components/HeaderGreen";
 import HeaderLight from "../components/HeaderLight";
 
 const Header = () => {
   return (
     <div>
-      <HeaderDark />
+      <HeaderGreen />
       <HeaderLight />
     </div>
   );

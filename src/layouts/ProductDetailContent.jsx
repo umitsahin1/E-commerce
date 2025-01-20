@@ -1,5 +1,3 @@
-import FooterBandage from "../components/FooterBandage";
-import FooterEnd from "../components/FooterEnd";
 import Clients from "../components/homePage/Clients";
 import DetailsCard from "../components/productDetailsPage/DetailsCard";
 import NavBar from "../components/productDetailsPage/NavBar";
@@ -19,10 +17,6 @@ const ProductDetailContent = () => {
           <ProductCards />
         </div>
         <Clients />
-      </div>
-      <div className="flex flex-col gap-10">
-        <FooterBandage backgroundClass="bg-white" />
-        <FooterEnd />
       </div>
     </div>
   );
