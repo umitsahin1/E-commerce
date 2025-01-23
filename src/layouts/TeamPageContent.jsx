@@ -1,4 +1,4 @@
-import Container from "../components/teamPage/container";
+import Container from "../components/teamPage/Container";
 import Cta from "../components/teamPage/Cta";
 import Hero from "../components/teamPage/Hero";
 import TeamCards from "../components/teamPage/TeamCards";
