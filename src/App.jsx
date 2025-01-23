@@ -10,7 +10,7 @@ import TeamPage from "./pages/TeamPage";
 
 function App() {
   return (
-    <div>
+    <div className="">
       <Switch>
         <Route exact path="/">
           <HomePage />
