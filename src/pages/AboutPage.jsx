@@ -1,13 +1,13 @@
 import FooterBandage from "../components/FooterBandage";
 import FooterEnd from "../components/FooterEnd";
 import HeaderBecome from "../components/HeaderBecome";
-import TeamPageContent from "../layouts/TeamPageContent";
+import AboutPageContent from "../layouts/AboutPageContent";
 
-const TeamPage = () => {
+const AboutPage = () => {
   return (
     <div className="flex flex-col gap-20 w-fit md:w-full">
       <HeaderBecome />
-      <TeamPageContent />
+      <AboutPageContent/>
       <div className="flex flex-col items-start md:items-center gap-8">
         <FooterBandage backgroundClass="bg-white" />
         <hr className="md:w-[1050px] mx-auto -mt-10" />
@@ -17,4 +17,4 @@ const TeamPage = () => {
   );
 };
 
-export default TeamPage;
+export default AboutPage;

@@ -1,16 +1,9 @@
-import {
-  ChevronDown,
-  Heart,
-  Menu,
-  Search,
-  ShoppingCart,
-  UserRound,
-} from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BiMenuAltRight } from "react-icons/bi";
 
-const HeaderTeam = () => {
+const HeaderBecome = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -118,4 +111,4 @@ const HeaderTeam = () => {
   );
 };
 
-export default HeaderTeam;
+export default HeaderBecome;
