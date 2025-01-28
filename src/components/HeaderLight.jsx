@@ -41,21 +41,20 @@ const HeaderLight = () => {
           <Link className=" hover:text-[#252B42] hover:scale-110" to="/contact">
             Contact
           </Link>
-          <Link className=" hover:text-[#252B42] hover:scale-110" to="/pages">
-            Pages
-          </Link>
           <Link className=" hover:text-[#252B42] hover:scale-110" to="/team">
             Team
           </Link>
         </nav>
 
         <div className="flex md:gap-6 items-center gap-3">
-          <div className="flex items-center gap-2">
-            <UserRound className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D] hidden md:block" />
-            <p className="link text-[#23A6F0] hidden md:block   ">
-              Login / Register
-            </p>
-          </div>
+          <Link className=" hover:text-[#252B42] hover:scale-110" to="/signup">
+            <div className="flex items-center gap-2">
+              <UserRound className="xl:text-[#23A6F0] w-6 h-6 text-[#3C403D] " />
+              <p className="link text-[#23A6F0] hidden md:block   ">
+                Login / Register
+              </p>
+            </div>
+          </Link>
           <Search className="md:text-[#23A6F0] w-6 h-6 text-[#3C403D]" />
           <ShoppingCart className="md:text-[#23A6F0] w-6 h-6 text-[#3C403D]" />
           <Heart className="md:text-[#23A6F0] w-6 h-6 text-[#3C403D] hidden md:block" />
@@ -70,7 +69,7 @@ const HeaderLight = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menü */}
+      
       {isMenuOpen && (
         <div className="absolute top-[81px] right-0 w-full h-[500px] bg-white  z-10 flex flex-col  justify-center gap-4 md:hidden rounded-lg ">
           <Link
@@ -102,12 +101,6 @@ const HeaderLight = () => {
             to="/contact"
           >
             Contact
-          </Link>
-          <Link
-            className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center mobile-menu text-[#737373]"
-            to="/pages"
-          >
-            Pages
           </Link>
           <Link
             className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center mobile-menu text-[#737373]"

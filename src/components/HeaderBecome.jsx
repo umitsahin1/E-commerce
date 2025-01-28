@@ -34,9 +34,6 @@ const HeaderBecome = () => {
           <Link className=" hover:text-[#252B42] hover:scale-110" to="/contact">
             Contact
           </Link>
-          <Link className=" hover:text-[#252B42] hover:scale-110" to="/pages">
-            Pages
-          </Link>
           <Link className=" hover:text-[#252B42] hover:scale-110" to="/team">
             Team
           </Link>
@@ -44,7 +41,9 @@ const HeaderBecome = () => {
 
         <div className="flex md:gap-6 items-center gap-3">
           <div className="flex items-center gap-2">
-            <p className="link text-[#23A6F0] hidden md:block   ">Login</p>
+            <Link to="/login">
+              <p className="link text-[#23A6F0]  ">Login</p>
+            </Link>
           </div>
           <button className="text-white w-[214px] h-[52px] bg-[#23A6F0] md:block hidden rounded-lg">
             Become a member
@@ -92,12 +91,6 @@ const HeaderBecome = () => {
             to="/contact"
           >
             Contact
-          </Link>
-          <Link
-            className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center mobile-menu text-[#737373]"
-            to="/pages"
-          >
-            Pages
           </Link>
           <Link
             className="hover:text-[#252B42] hover:scale-110 py-2 w-full text-center mobile-menu text-[#737373]"
