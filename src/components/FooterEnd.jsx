@@ -1,7 +1,7 @@
 const FooterEnd = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row md:w-[1041px] md:h-[170px] mx-auto md:justify-between gap-10 ">
+      <div className="flex flex-col md:flex-row md:w-[1041px] md:h-[170px] md:p-0 p-24 md:mx-auto md:justify-between gap-10 ">
         <div className="text-[#737373] flex flex-col gap-4">
           <h5 className="text-black">Company Info</h5>
           <p className="link">About Us</p>
