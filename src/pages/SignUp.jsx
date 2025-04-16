@@ -3,6 +3,8 @@ import Header from "../layouts/Header";
 import { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const [data, setData] = useState({});
@@ -14,11 +16,21 @@ const SignUp = () => {
   } = useForm();
   const history = useHistory();
 
-  const onSubmit = (formData) => {
-    setData(formData);
-    history.push("/login");
-  };
+  const selectedRole = watch("role_id");
 
+  const onSubmit = (formData) => {
+    delete formData.confirmPassword;
+    axios
+      .post("https://workintech-fe-ecommerce.onrender.com/signup", formData)
+      .then((response) => {
+        setData(response.data);
+        history.push("/login");
+        toast.success("Kayıt olma işlemi başarılı");
+      })
+      .catch((error) => {
+        console.error("Hata:", error.response?.data || error.message);
+      });
+  };
   const password = watch("password");
 
   return (
@@ -36,6 +48,7 @@ const SignUp = () => {
               <input
                 type="text"
                 id="name"
+                name="name"
                 placeholder="Full Name"
                 className="h-10 w-full text-base bg-gray-100 rounded-sm border border-[#D9D9D9] p-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ml-2"
                 {...register("name", {
@@ -50,7 +63,6 @@ const SignUp = () => {
                 <p className="text-red-600">{errors.name.message}</p>
               )}
             </div>
-
             <div className="flex flex-col gap-2">
               <h2 className="text-lg md:text-xl text-gray-700">
                 Email Address *
@@ -58,6 +70,7 @@ const SignUp = () => {
               <input
                 type="email"
                 id="email"
+                name="email"
                 placeholder="example@gmail.com"
                 className="h-10 w-full text-base bg-gray-100 rounded-sm border border-[#D9D9D9] p-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ml-2"
                 {...register("email", {
@@ -72,12 +85,12 @@ const SignUp = () => {
                 <p className="text-red-600">{errors.email.message}</p>
               )}
             </div>
-
             <div className="flex flex-col gap-2">
               <h2 className="text-lg md:text-xl text-gray-700">Password *</h2>
               <input
                 type="password"
                 id="password"
+                name="password"
                 placeholder="********"
                 className="h-10 w-full text-base bg-gray-100 rounded-sm border border-[#D9D9D9] p-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ml-2"
                 {...register("password", {
@@ -96,14 +109,13 @@ const SignUp = () => {
                 <p className="text-red-600">{errors.password.message}</p>
               )}
             </div>
-
             <div className="flex flex-col gap-2">
               <h2 className="text-lg md:text-xl text-gray-700">
                 Confirm Password *
               </h2>
               <input
                 type="password"
-                id="comfirmPassword"
+                id="confirmPassword"
                 placeholder="********"
                 className="h-10 w-full text-base bg-gray-100 rounded-sm border border-[#D9D9D9] p-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ml-2"
                 {...register("confirmPassword", {
@@ -116,10 +128,86 @@ const SignUp = () => {
                 <p className="text-red-600">{errors.confirmPassword.message}</p>
               )}
             </div>
+            {selectedRole === "store" && (
+              <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-2 ">
+                  <h2 className="text-lg md:text-xl text-gray-700">
+                    Mağaza Adı *
+                  </h2>
+                  <input
+                    type="text"
+                    placeholder="Mağaza Adı"
+                    className="h-10 w-full text-base bg-gray-100 rounded-sm border border-[#D9D9D9] p-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ml-2"
+                    {...register("store.name", {
+                      required: "Mağaza adı zorunludur",
+                      minLength: 3,
+                    })}
+                  />
+                </div>
 
+                <div className="flex flex-col gap-2 ">
+                  <h2 className="text-lg md:text-xl text-gray-700">
+                    Mağaza İletişim Numarası *
+                  </h2>
+                  <input
+                    type="text"
+                    placeholder="Telefon (Türkiye)"
+                    className="h-10 w-full text-base bg-gray-100 rounded-sm border border-[#D9D9D9] p-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ml-2"
+                    {...register("store.phone", {
+                      required: "Telefon numarası zorunludur",
+                      pattern: {
+                        value: /^(\+90|0)?5\d{9}$/,
+                        message: "Geçerli bir Türkiye telefon numarası girin",
+                      },
+                    })}
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2 ">
+                  <h2 className="text-lg md:text-xl text-gray-700">
+                    Vergi Numarası *
+                  </h2>
+                  <input
+                    type="text"
+                    placeholder="Vergi No (TXXXXVXXXXXX)"
+                    className="h-10 w-full text-base bg-gray-100 rounded-sm border border-[#D9D9D9] p-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ml-2"
+                    {...register("store.tax_no", {
+                      required: "Vergi no zorunludur",
+                      pattern: {
+                        value: /^T\d{4}V\d{6}$/,
+                        message: "Vergi no formatı TXXXXVXXXXXX olmalıdır",
+                      },
+                    })}
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2 ">
+                  <h2 className="text-lg md:text-xl text-gray-700">
+                    Banka Iban Numarası *
+                  </h2>
+                  <input
+                    type="text"
+                    placeholder="***********"
+                    className="h-10 w-full text-base bg-gray-100 rounded-sm border border-[#D9D9D9] p-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ml-2"
+                    {...register("store.bank_account", {
+                      required: "IBAN zorunludur",
+                      pattern: {
+                        value: /^TR\d{2}\d{4}\d{4}\d{4}\d{4}\d{4}$/,
+                        message: "Geçerli bir IBAN girin",
+                      },
+                    })}
+                  />
+                </div>
+              </div>
+            )}
             <div className="flex flex-col gap-2 ">
               <h2 className="text-lg md:text-xl text-gray-700">Role *</h2>
-              <select className="h-10 w-full text-base rounded-lg  border-2 border-[#D9D9D9] p-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ml-2 bg-[#23A6F0]">
+              <select
+                id="role_id"
+                name="role_id"
+                className="h-10 w-full text-base rounded-lg  border-2 border-[#D9D9D9] p-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ml-2 bg-[#23A6F0]"
+                {...register("role_id", { required: "Rol seçimi zorunludur" })}
+              >
                 <option value="admin" className="bg-gray-100 text-gray-700">
                   Yönetici
                 </option>
@@ -131,12 +219,10 @@ const SignUp = () => {
                 </option>
               </select>
             </div>
-
             <a href="/login" className="text-black text-md mt-2">
               Already have an account?
               <span className="text-[#23A6F0] ml-4 ">Login</span>
             </a>
-
             <button
               type="submit"
               className="inline-flex items-center justify-center  gap-2 rounded-md text-sm font-medium bg-[#23A6F0] text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2  mt-5 w-40 h-12 mx-auto"

@@ -1,20 +1,26 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Header from "../layouts/Header";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../store/actions/authActions";
 import { useState } from "react";
 
 const Login = () => {
-  const [data, setData] = useState({});
+  const [isRememberMe, setIsRememberMe] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const history = useHistory();
+  const dispatch = useDispatch();
 
-  const onSubmit = (formData) => {
-    setData(formData);
-    history.push("/");
+  const handleRemember = () => {
+    setIsRememberMe((prev) => !prev);
+  };
+
+  const onSubmit = (data) => {
+    dispatch(loginUser(data, history, isRememberMe));
   };
 
   return (
@@ -57,18 +63,22 @@ const Login = () => {
                 {...register("password", {
                   required: "Şifre zorunludur",
                   minLength: {
-                    value: 8,
-                    message: "Şifre en az 8 karakter olmalıdır",
-                  },
-                  pattern: {
-                    value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/,
-                    message: "Şifre en az bir harf ve bir rakam içermelidir",
+                    value: 6,
+                    message: "Şifre en az 6 karakter olmalıdır",
                   },
                 })}
               />
               {errors.password && (
                 <p className="text-red-600">{errors.password.message}</p>
               )}
+            </div>
+            <div className="flex gap-2 ml-2">
+              <input
+                type="checkbox"
+                id="rememberMe"
+                onChange={handleRemember}
+              />
+              <label>Remember me</label>
             </div>
 
             <a href="/signup" className="text-black text-md mt-2">

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-const CarouselWithText = () => {
+const ProductSliderItems = () => {
   const images = ["/col-md-6.png", "col-md-6.png"];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,9 +33,11 @@ const CarouselWithText = () => {
           <h4 className="text-[#737373] md:w-[350px] md:h-[60px] w-[291px] h-[90px] text-center md:text-start ">
             We know how large objects will act, but things on a small scale.
           </h4>
-          <button className="bg-[#23A6F0] w-[221px] h-[62px] rounded-lg flex justify-center items-center  ">
-            <h3 className="text-[#FFFFFF] p-0 m-0 ">SHOP NOW</h3>
-          </button>
+          <Link to="/shop">
+            <button className="bg-[#23A6F0] w-[221px] h-[62px] rounded-lg flex justify-center items-center  ">
+              <h3 className="text-[#FFFFFF] p-0 m-0 ">SHOP NOW</h3>
+            </button>
+          </Link>
         </div>
 
         <button
@@ -64,4 +67,4 @@ const CarouselWithText = () => {
   );
 };
 
-export default CarouselWithText;
+export default ProductSliderItems;

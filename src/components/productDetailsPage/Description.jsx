@@ -1,4 +1,12 @@
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+
 const Description = () => {
+  const data = useSelector((state) => state.product.productList);
+  const { productId } = useParams();
+
+  const product = data.find((item) => item.id === Number(productId));
+  console.log("product", product);
   return (
     <div className=" md:w-[1050px] mx-auto ">
       <h3>Description :</h3>
@@ -13,17 +21,7 @@ const Description = () => {
         a choice.
       </p>
       <div className="flex flex-col md:flex-row md:h-[500px] md:gap-0 gap-2">
-        <img src="public/description görsel.svg" />
-        <div className="flex flex-col gap-2 ">
-          <img
-            className="md:w-[300px] md:h-[245px] "
-            src="public/details-görsel-1.svg"
-          />
-          <img
-            className="md:w-[300px] md:h-[245px]"
-            src="public/details-görsel-2.svg"
-          />
-        </div>
+        <img src={product?.images[0]?.url} />
       </div>
     </div>
   );

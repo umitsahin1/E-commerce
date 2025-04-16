@@ -2,11 +2,33 @@ import { ChevronDown, Menu } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BiMenuAltRight } from "react-icons/bi";
+import CategoryDropdown from "./CategoryDropdown";
+import { toast } from "react-toastify";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const HeaderBecome = () => {
+  const isAuth = localStorage.getItem("isAuthenticated");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
+  };
+  const history = useHistory();
+
+  const handleClickBecome = () => {
+    if (isAuth === "true") {
+      toast.success("Siz zaten üyesiniz");
+    } else {
+      history.push("/signup");
+    }
+  };
+
+  const openCategoryDropdown = () => {
+    setIsCategoryDropdownOpen(true);
+  };
+
+  const closeCategoryDropdown = () => {
+    setIsCategoryDropdownOpen(false);
   };
   return (
     <div className="flex md:justify-around justify-between items-center h-[91px] px-10 md:gap-20">
@@ -19,11 +41,23 @@ const HeaderBecome = () => {
             Home
           </Link>
           <Link
-            className=" flex gap-1 hover:text-[#252B42] hover:scale-110"
+            className="relative hover:text-[#252B42] hover:scale-105"
             to="/shop"
+            onMouseEnter={openCategoryDropdown}
+            onMouseLeave={closeCategoryDropdown}
           >
-            Shop
-            <ChevronDown className="w-[15px]" />
+            <button className=" flex gap-1 hover:text-[#252B42] hover:scale-110">
+              Shop
+              <ChevronDown className="w-[15px]" />
+            </button>
+            {isCategoryDropdownOpen && (
+              <div
+                onMouseEnter={openCategoryDropdown}
+                onMouseLeave={closeCategoryDropdown}
+              >
+                <CategoryDropdown onClose={closeCategoryDropdown} />
+              </div>
+            )}
           </Link>
           <Link className=" hover:text-[#252B42] hover:scale-110" to="/about">
             About
@@ -40,12 +74,18 @@ const HeaderBecome = () => {
         </nav>
 
         <div className="flex md:gap-6 items-center gap-3">
-          <div className="flex items-center gap-2">
-            <Link to="/login">
-              <p className="link text-[#23A6F0]  ">Login</p>
-            </Link>
-          </div>
-          <button className="text-white w-[214px] h-[52px] bg-[#23A6F0] md:block hidden rounded-lg">
+          {!isAuth && (
+            <div className="flex items-center gap-2">
+              <Link to="/login">
+                <p className="link text-[#23A6F0]  ">Login</p>
+              </Link>
+            </div>
+          )}
+
+          <button
+            onClick={handleClickBecome}
+            className="text-white w-[214px] h-[52px] bg-[#23A6F0] md:block hidden rounded-lg"
+          >
             Become a member
           </button>
           {isMenuOpen ? (

@@ -12,10 +12,13 @@ const FilterRow = () => {
         <select
           id="exampleSelect"
           name="select"
-          className="text-[#737373] w-[141px] h-[50px] border-2  bg-[#F9F9F9] rounded-lg px-4"
+          className="text-[#737373] w-[200px] h-[50px] border-2  bg-[#F9F9F9] rounded-lg px-4"
         >
-          <option>Popularity</option>
-          <option>Most Commented</option>
+          <option>Select Sorting</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Rating: Low to High</option>
+          <option>Rating: High to Low</option>
         </select>
         <button className="w-[94px] h-[50px] bg-[#23A6F0] rounded-lg text-white">
           Filter
